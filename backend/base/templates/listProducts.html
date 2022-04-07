@@ -1,12 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% for product in products %}
-    <p>{{product}}</p>
+{% extends 'base.html' %}
+{% load custom_tag %}
+{% block title %} Nos Produits {% endblock%}
+{%  block content %}
+    <div class="content">
+        <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Identifiant</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Categorie</th>
+      <th scope="col">Prix</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in products%}
+    <tr class="table-active">
+      <th scope="row">{{ product|get_value:"_id" }}</th>
+      <td>{{ product|get_value:"name" }}</td>
+      <td>{{ product|get_value:"category" }}t</td>
+      <td>{{ product|get_value:"price" }}</td>
+    </tr>
     {% endfor %}
-</body>
-</html>
+
+  </tbody>
+</table>
+    </div>
+{%  endblock %}
