@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    Ce site represente un catalogue de produit
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %} Accueil {% endblock%}
+{% block content %}
+    <div class="container-fluid">
+            <div class="jumbotron m-3">
+                    <h1 class="display-3">Bienvenue sur E-vente</h1>
+                    <p class="lead">Nous mettons à votre position une large catégorie de produits.</p>
+                    <hr class="my-4">
+                    <p>.Vous voulez découvrir nos produits !! </p>
+                    <p class="lead">
+                     <a class="btn btn-primary btn-lg" href="{% url 'Products' %}" role="button">Learn more</a>
+                    </p>
+            </div>
+    </div>
+{% endblock %}
