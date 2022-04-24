@@ -13,12 +13,13 @@
     </tr>
   </thead>
   <tbody>
-    {% for product in products%}
+    {% for Product in products%}
     <tr class="table-active">
-      <th scope="row">{{ product|get_value:"_id" }}</th>
-      <td>{{ product|get_value:"name" }}</td>
-      <td>{{ product|get_value:"category" }}t</td>
-      <td>{{ product|get_value:"price" }}</td>
+      <th scope="row">{{ Product.user}}</th>
+      <td>{{ Product.name}}</td>
+      <td>{{ Product.category}}</td>
+      <td>{{ Product.price}}</td>
+      
     </tr>
     {% endfor %}
 
